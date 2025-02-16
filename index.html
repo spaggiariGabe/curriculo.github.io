@@ -189,6 +189,7 @@
         .banner img {
             width: 100%;
             flex-shrink: 0;
+            border-radius: 10px;
         }
 
         .indicators {
@@ -269,7 +270,6 @@
             font-size: 26px;
             color: #fff;
             text-decoration: none;
-
         }
 
         .h2a:hover {
@@ -388,15 +388,13 @@
             const menu = document.querySelector(".menu");
             const menuCheckbox = document.getElementById("menu-checkbox");
             const menuLinks = document.querySelectorAll(".menu a");
-
-            // Fecha o menu ao clicar fora
+            
             document.addEventListener("click", function (event) {
                 if (!menu.contains(event.target) && event.target !== menuCheckbox) {
                     menuCheckbox.checked = false;
                 }
             });
-
-            // Fecha o menu ao clicar em um link dentro dele
+            
             menuLinks.forEach(link => {
                 link.addEventListener("click", function () {
                     menuCheckbox.checked = false;
