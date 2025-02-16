@@ -139,17 +139,73 @@
         </div>
     </div>
 
-    <div class="intro-container4">
+    <div class="intro-container3">
         <div class="intro-text">
             <h3>Motivação:</h3>
-            <p>Em transição de carreira do Design para a área de tecnologia, combinando criatividade com desenvolvimento.</p>
+            <p>Estou em um momento de transição de carreira, migrando do Design para a área de tecnologia. Acredito que minhas habilidades em design, combinadas com a minha formação em tecnologia, me tornam um candidato diferenciado para oportunidades de estágio em tecnologia.</p>
+            <p>Sou um profissional proativo, que já participou de várias experiências, dedicado e com grande potencial de aprendizado. Tenho certeza de que posso contribuir significativamente para a qualquer equipe.</p>
+        </div>
+    </div>
+    <div id="trabalhos"></div>
+
+    <div class="intro-container4">
+        <div class="intro-text">
+            <h3>Alguns dos meus trabalhos:</h3>
+                <div class="buttons">
+            <a href="https://github.com/spaggiariGabe" class="button" target="_blank">Programação</a>
+            <a href="https://www.behance.net/spaggiariart" class="button" target="_blank">Design</a>
+            <a href="https://www.instagram.com/spaggiarigabriel" class="button" target="_blank">instagram</a>
+            </div>
         </div>
     </div>
 
-    <div class="buttons">
-        <a href="https://github.com/spaggiariGabe" class="button" target="_blank">Programação</a>
-        <a href="https://www.behance.net/spaggiariart" class="button" target="_blank">Design</a>
-        <a href="https://www.instagram.com/spaggiarigabriel" class="button" target="_blank">Instagram</a>
+    <div class="banner-container">
+        <div class="banner">
+            <img src="nalatavalk.png" class="active" alt="Imagem 1">
+            <img src="viper_BE.png" alt="Imagem 2">
+            <img src="psi_BE.png" alt="Imagem 3">
+            <img src="game1_be.png" alt="Imagem4">
+        </div>
+        <div class="indicators">
+            <span class="indicator active"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+        </div>
     </div>
+
+    <div id="contatos" class="contact-banner">
+        <a href="https://wa.me/+5511949674045" target="_blank">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/gabriel-spaggiari-a7b52521b/" target="_blank">LinkedIn</a>
+        <a href="mailto:gabspaggiari@gmail.com">Email</a>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+            const images = document.querySelectorAll('.banner img');
+            const indicators = document.querySelectorAll('.indicator');
+
+            function showImage(index) {
+                images[currentIndex].classList.remove('active');
+                indicators[currentIndex].classList.remove('active');
+                currentIndex = index;
+                images[currentIndex].classList.add('active');
+                indicators[currentIndex].classList.add('active');
+            }
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                showImage(index);
+        });
+    });
+
+    function showNextImage() {
+        let nextIndex = (currentIndex + 1) % images.length;
+        showImage(nextIndex);
+    }
+
+    setInterval(showNextImage, 2000); // Mudar imagem a cada 2 segundos
+
+    </script>
 </body>
 </html>
