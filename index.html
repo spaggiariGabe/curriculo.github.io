@@ -19,81 +19,45 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            flex-wrap: wrap;
         }
         nav a {
-            color: white;
+            color: rgb(255, 255, 255);
             text-decoration: none;
             padding: 10px 20px;
             border-radius: 12px;
             background-color: black;
-            margin: 4px;
+            margin: 0 4px;
         }
         nav a:hover {
             background-color: rgba(33, 66, 60, 0.815);
         }
         .intro-container, .intro-container2, .intro-container3, .intro-container4 {
             display: flex;
-            flex-direction: column;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            margin: 8% 5%;
+            margin: 5% auto;
+            padding: 20px;
             background-color: rgba(202, 252, 241, 0.932);
             border-radius: 10px;
-            padding: 20px;
+            max-width: 80%;
         }
         .intro-image {
+            border: double 1px rgba(5, 41, 27, 0.842);
+            border-radius: 10px;
             width: 200px;
             height: 200px;
-            border-radius: 10px;
-            border: double 2px rgba(5, 41, 27, 0.842);
-            margin-bottom: 10px;
         }
-        .banner-container {
-            position: relative;
-            width: 95%;
-            height: auto;
-            overflow: hidden;
-            border-radius: 10px;
-            margin: 20px auto;
-        }
-        .banner img {
-            width: 100%;
-            height: auto;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .banner img.active {
-            opacity: 1;
-        }
-        .indicators {
-            text-align: center;
-            position: absolute;
-            bottom: 15px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-        .indicator {
-            height: 12px;
-            width: 12px;
-            background-color: rgba(98, 156, 144, 0.8);
-            border-radius: 50%;
-            margin: 0 5px;
-            cursor: pointer;
-        }
-        .indicator.active {
-            background-color: rgb(241, 144, 217);
+        .intro-text {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 90%;
         }
         .buttons {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             gap: 20px;
-            margin: 20px 0;
         }
         .button {
             background-color: #4ca793;
@@ -104,101 +68,88 @@
             text-decoration: none;
             font-size: 18px;
             text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
         }
         .button:hover {
             background-color: #40998a;
-            transform: scale(1.05);
-        }
-        .contact-banner {
-            position: relative;
-            width: 90%;
-            height: 300px;
-            margin: 10% auto;
-            background-size: cover;
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .contact-banner a {
-            color: white;
-            text-decoration: none;
-            margin: 10px;
-            font-size: 20px;
-        }
-        footer {
-            background-color: rgba(98, 156, 144, 0.5);
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            transform: scale(1.10);
         }
         @media (max-width: 768px) {
+            .intro-container, .intro-container2, .intro-container3, .intro-container4 {
+                flex-direction: column;
+                max-width: 90%;
+                margin: 5% auto;
+                padding: 10px;
+            }
             nav {
                 flex-direction: column;
                 align-items: center;
             }
             nav a {
-                padding: 8px;
-                font-size: 14px;
-            }
-            .intro-container, .intro-container2, .intro-container3, .intro-container4 {
-                margin: 10% 5%;
+                padding: 8px 15px;
+                margin: 5px 0;
             }
             .buttons {
                 flex-direction: column;
-                align-items: center;
             }
             .button {
                 width: 80%;
+                text-align: center;
             }
-            .contact-banner {
-                height: auto;
-                padding: 20px;
-            }
-            .contact-banner a {
-                font-size: 18px;
-                margin: 5px;
+            .intro-image {
+                width: 150px;
+                height: 150px;
             }
         }
     </style>
 </head>
-<body>
+<body id="sobre">
     <nav>
         <a href="#sobre">Sobre</a>
         <a href="#minha-trajetoria">Minha Trajetória</a>
-        <a href="#competencias-habilidades">Competências</a>
+        <a href="#competencias-habilidades">Competencias e Habilidades</a>
         <a href="#motivacao">Motivação</a>
         <a href="#trabalhos">Trabalhos</a>
         <a href="#contatos">Contatos</a>
     </nav>
+
     <div class="intro-container">
-        <img src="me.png" alt="Foto Gabriel Spaggiari" class="intro-image">
-        <h2>Gabriel Spaggiari</h2>
-        <p>Bem-vindo ao meu currículo online!</p>
-    </div>
-    <div class="banner-container">
-        <div class="banner">
-            <img src="nalatavalk.png" class="active" alt="Imagem 1">
-            <img src="viper_BE.png" alt="Imagem 2">
-            <img src="psi_BE.png" alt="Imagem 3">
-        </div>
-        <div class="indicators">
-            <span class="indicator active"></span>
-            <span class="indicator"></span>
-            <span class="indicator"></span>
+        <div class="intro-text">
+            <img src="me.png" alt="Foto Gabriel Spaggiari" class="intro-image">
+            <h2>Gabriel Spaggiari</h2>
+            <p>Bem-vindo ao meu currículo online!</p>
+            <p id="minha-trajetoria">Profissional experiente em design com formação em tecnologia, buscando oportunidade de estágio na área de tecnologia para alavancar minha carreira e contribuir com minhas habilidades.</p>
         </div>
     </div>
-    <div id="contatos" class="contact-banner">
-        <a href="https://wa.me/+5511949674045" target="_blank">WhatsApp</a>
-        <a href="https://www.linkedin.com/in/gabriel-spaggiari-a7b52521b/" target="_blank">LinkedIn</a>
-        <a href="mailto:gabspaggiari@gmail.com">Email</a>
+
+    <div class="intro-container2">
+        <div class="intro-text">
+            <h3>Minha trajetória:</h3>
+            <p>Graduado em Design pela Ibero Americano/Anhanguera. Experiência em UX/UI, Identidade Visual, Edição de Imagens e Desenvolvimento Web.</p>
+            <p>Formação técnica em Computadores e Administração.</p>
+            <p id="competencias-habilidades">Tecnólogo em Análise e Desenvolvimento de Sistemas pela USCS.</p>
+        </div>
     </div>
-    <footer>
-        <p>© 2025 Gabriel Spaggiari</p>
-    </footer>
+
+    <div class="intro-container3">
+        <div class="intro-text">
+            <h3>Competências e Habilidades:</h3>
+            <p>Comunicação eficaz, trabalho em equipe, aprendizagem contínua, dedicação e iniciativa.</p>
+            <p>Habilidades técnicas: HTML, CSS, JavaScript, PHP, SQL, C/C#, Python, Java, Photoshop, Illustrator, InDesign.</p>
+        </div>
+    </div>
+
+    <div class="intro-container4">
+        <div class="intro-text">
+            <h3>Motivação:</h3>
+            <p>Em transição de carreira do Design para a área de tecnologia, combinando criatividade com desenvolvimento.</p>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <a href="https://github.com/spaggiariGabe" class="button" target="_blank">Programação</a>
+        <a href="https://www.behance.net/spaggiariart" class="button" target="_blank">Design</a>
+        <a href="https://www.instagram.com/spaggiarigabriel" class="button" target="_blank">Instagram</a>
+    </div>
 </body>
 </html>
