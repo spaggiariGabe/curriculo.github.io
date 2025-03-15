@@ -2,304 +2,527 @@
 <html lang="pt">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo Gabriel Spaggiari</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: Segoe UI;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Currículo online de Gabriel Spaggiari, Designer e Desenvolvedor Web.">
+        <meta name="keywords" content="Gabriel Spaggiari, Design Gráfico, Desenvolvimento Web, UX/UI, Front-end">
+        <meta name="author" content="Gabriel Spaggiari">
+        <meta property="og:title" content="Spaggiari Design - Currículo Online">
+        <meta property="og:description"
+            content="Conheça o currículo de Gabriel Spaggiari, Designer e Desenvolvedor Web.">
+        <meta property="og:image" content="caminho/para/sua/logo.png">
+        <meta property="og:url" content="https://www.seusite.com">
+        <link rel="canonical" href="https://www.seusite.com">
+        <title>Spaggiari Gabriel</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        header {
-            background: #333333e0;
-            padding: 15px;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            z-index: 200;
-            width: 100%;
-            top: 0;
-        }
+            body {
+                font-family: 'Poppins', sans-serif;
+                font-size: 18px;
+                scroll-behavior: smooth;
+                position: relative;
+                overflow-x: hidden;
+            }
 
-        .menu {
-            display: flex;
-            gap: 15px;
-        }
-
-        .menu a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-        }
-
-        .menu a:hover {
-            color: aqua;
-            text-shadow: 0 0px 4px aqua;
-        }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .menu-toggle div {
-            width: 30px;
-            height: 4px;
-            background: white;
-            margin: 5px 0;
-        }
-
-        @media (max-width: 768px) {
-            .menu {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 72px;
-                right: 10px;
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
                 width: 100%;
-                max-width: 200px;
-                background: #333333e0;
-                padding: 10px 0;
-                border-radius: 0px 0px 10px 10px;
-                z-index: 200;
+                height: 100%;
+                background:
+                    repeating-linear-gradient(0deg,
+                        rgba(124, 124, 124, 0.1) 0px,
+                        rgba(128, 128, 128, 0.1) 1px,
+                        transparent 1px,
+                        transparent 40px),
+                    repeating-linear-gradient(90deg,
+                        rgba(0, 0, 0, 0.1) 0px,
+                        rgba(0, 0, 0, 0.1) 1px,
+                        transparent 1px,
+                        transparent 40px);
+                z-index: -1;
+                animation: moveLines 5s linear infinite;
+                pointer-events: none;
+            }
+
+            @keyframes moveLines {
+                0% {
+                    background-position: 0 0;
+                }
+
+                100% {
+                    background-position: 40px 40px;
+                }
+            }
+
+            .intro-container,
+            .intro-container2,
+            .intro-container3,
+            .intro-container4,
+            .intro-container5,
+            .works-banner {
+                backdrop-filter: blur(5px);
+            }
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 15px;
+                background: #333;
+                color: #fff;
+                position: relative;
+                z-index: 100;
+            }
+
+            .menu {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                flex: 1;
+                margin: 0 auto;
+                order: 2;
+            }
+
+            .logo {
+                position: relative;
+                overflow: visible;
+            }
+
+            .logo img {
+                height: 40px;
+                width: auto;
+                transition: all 0.5s ease;
+            }
+
+            .logo:hover img {
+                transform: scale(1.1);
             }
 
             .menu a {
-                padding: 10px;
-                text-align: center;
-                display: block;
+                color: white;
+                text-decoration: none;
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+
+            .menu a:hover {
+                text-shadow: 0px 0px 4px #fff;
+            }
+
+            .whatsapp-button {
+                font-size: 14px;
+                padding: 8px 12px;
             }
 
             .menu-toggle {
-                display: flex;
+                display: none;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+                z-index: 300;
             }
 
-            #menu-checkbox:checked~.menu {
-                display: flex;
+            .menu-toggle div {
+                width: 25px;
+                height: 3px;
+                background-color: #fff;
+                transition: all 0.3s ease;
             }
-        }
 
-        .intro-container {
-            background: #fff;
-            padding: 20px;
-            margin: 10px auto;
-            margin-top: 90px;
-            width: 96%;
-            max-width: 1200px;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s forwards;
-            text-align: center;
-        }
-
-        .intro-container2,
-        .intro-container3,
-        .intro-container4 {
-            background: #ffffff;
-            padding: 20px;
-            margin: 25px auto;
-            width: 96%;
-            max-width: 1000px;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s forwards;
-            text-align: center;
-        }
-
-        .intro-image {
-            width: 100px;
-            border-radius: 50%;
-            display: block;
-            margin: 0 auto 15px;
-        }
-
-        .buttons {
-            display: flex;
-            justify-content: center;
-            margin: 10px;
-            gap: 10px;
-        }
-
-        .button {
-            background: #333;
-            color: #fff;
-            padding: 6px 12px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            ;
-        }
-
-        .button:hover {
-            background: aqua;
-            color: #000;
-        }
-
-        @keyframes fadeInUp {
-            from {
+            .intro-container {
+                padding: 20px;
+                margin: 10px auto;
+                width: 96%;
+                max-width: 1200px;
+                border-radius: 10px;
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
                 opacity: 0;
                 transform: translateY(20px);
+                animation: fadeInUp 1s forwards;
+                text-align: center;
             }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .intro-container2 {
+                padding: 40px;
+                padding-left: 150px;
+                padding-right: 150px;
+                margin: 10px auto;
+                margin-top: 30px;
+                width: 100%;
+                opacity: 0;
+                text-align: center;
+                transform: translateY(20px);
+                animation: fadeInUp 1s forwards;
+                text-align: center;
             }
-        }
 
-        h2 {
-            margin: 10px;
-        }
+            .intro-container3 {
+                padding: 20px;
+                margin: 10px auto;
+                width: 96%;
+                max-width: 1200px;
+                border-radius: 10px;
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeInUp 1s forwards;
+                text-align: center;
+            }
 
-        h3 {
-            margin: 10px;
-        }
+            .intro-container4 {
+                padding: 40px;
+                padding-left: 150px;
+                padding-right: 150px;
+                width: 100%;
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeInUp 1s forwards;
+                text-align: center;
+            }
 
-        p {
-            margin: 5px;
-        }
+            .intro-container5 {
+                margin: 10px auto;
+                width: 100%;
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeInUp 1s forwards;
+                text-align: center;
+            }
 
-        .banner-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: auto;
-            overflow: hidden;
-        }
+            .intro-container2 {
+                display: flex;
+                align-items: center;
+                gap: 70px;
+                text-align: center;
+            }
 
-        .banner {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
+            .intro-image {
+                width: 180px;
+                border-radius: 50%;
+                display: block;
+                margin: 0 auto 15px;
+            }
 
-        .banner img {
-            width: 100%;
-            flex-shrink: 0;
-            border-radius: 10px;
-        }
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
 
-        .indicators {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 5px;
-        }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
 
-        .indicator {
-            width: 12px;
-            height: 12px;
-            background-color: #333;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
+            .intro-container,
+            .intro-container2,
+            .intro-container3,
+            .intro-container4,
+            .intro-container5 {
+                animation: fadeIn 1s ease-out forwards;
+                opacity: 0;
+            }
 
-        .indicator.active {
-            background-color: aqua;
-        }
+            .social-icons {
+                display: flex;
+                gap: 10px;
+                order: 3;
+            }
 
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background-color: #25D366;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 50px;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            transition: opacity 0.3s;
-        }
+            .social-icons img {
+                width: 24px;
+                height: 24px;
+                transition: transform 0.3s ease;
+            }
 
-        .whatsapp-button img {
-            width: 24px;
-            height: 24px;
-        }
+            .social-icons img:hover {
+                transform: scale(1.2);
+            }
 
-        .hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
 
-        .footer {
-            background-color: #222;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
 
-        .contact-info {
-            margin-bottom: 10px;
-        }
+            h2 {
+                margin: 10px;
+                font-size: 2em;
+            }
 
-        .contact-info a {
-            color: #fff;
-            margin: 0 10px;
-            text-decoration: none;
-        }
+            h3 {
+                margin: 10px;
+                font-size: 1.5em;
+            }
 
-        .contact-info a:hover {
-            color: aqua;
-            text-shadow: 0 0px 4px aqua;
-        }
+            p {
+                margin: 5px;
+                font-size: 1.1em;
+            }
 
-        .h2a {
-            margin-left: 10px;
-            font-size: 26px;
-            color: #fff;
-            text-decoration: none;
-        }
+            .indicator.active {
+                background-color: aqua;
+            }
 
-        .h2a:hover {
-            color: aqua;
-            text-shadow: 0 0px 4px aqua;
-        }
-    </style>
-</head>
+            .whatsapp-button {
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                width: 40px;
+                height: 40px;
+                background-color: #222;
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                transition: opacity 0.3s;
+                z-index: 300;
+            }
+
+            .whatsapp-button img {
+                width: 24px;
+                height: 24px;
+            }
+
+            .whatsapp-button:hover {
+                background-color: #25D366;
+            }
+
+            .hidden {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .footer {
+                background-color: #222;
+                color: #fff;
+                text-align: center;
+                padding: 10px;
+                font-size: 12px;
+            }
+
+            .contact-info {
+                margin-bottom: 10px;
+            }
+
+            .contact-info a {
+                color: #fff;
+                margin: 0 10px;
+                text-decoration: none;
+            }
+
+            .contact-info a:hover {
+                text-shadow: 0 0px 4px rgb(255, 255, 255);
+            }
+
+            .intro-container5 {
+                overflow: hidden;
+                white-space: nowrap;
+                position: relative;
+                width: 100%;
+            }
+
+            .scrolling-images {
+                display: inline-block;
+                animation: scrollImages 30s linear infinite;
+            }
+
+            .scrolling-images img {
+                height: 120px;
+                margin-right: 10px;
+                border-radius: 10px;
+                display: inline-block;
+            }
+
+            @keyframes scrollImages {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+
+            .scrolling-images {
+                cursor: grab;
+                user-select: none;
+            }
+
+            .scrolling-images:active {
+                cursor: grabbing;
+            }
+
+            .works-banner {
+                width: 100%;
+                min-height: 100vh;
+                padding: 10px;
+                margin-top: 30px;
+            }
+
+            .works-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .work-item {
+                position: relative;
+                overflow: hidden;
+                border-radius: 10px;
+                aspect-ratio: 4/3;
+                transition: transform 0.3s ease;
+            }
+
+            .work-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: grayscale(100%);
+                transition: all 0.3s ease;
+            }
+
+            .work-item:hover img {
+                filter: grayscale(0%);
+                transform: scale(1.05);
+            }
+
+            .load-message {
+                text-align: center;
+                padding: 20px;
+                color: #666;
+                font-style: italic;
+            }
+
+            .work-item a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+            }
+
+            .work-item:hover a img {
+                filter: grayscale(0%);
+                transform: scale(1.05);
+            }
+
+            @media (max-width: 1024px) {
+                .works-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .works-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .menu-toggle {
+                    display: flex;
+                }
+
+                .menu {
+                    display: none;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 40px;
+                    width: 100%;
+                    max-width: 200px;
+                    background: #333;
+                    padding: 10px 0;
+                    border-radius: 10px;
+                    z-index: 200;
+                }
+
+                #menu-checkbox:checked~.menu {
+                    display: flex;
+                }
+
+                .menu a {
+                    padding: 10px;
+                    text-align: center;
+                    display: block;
+                }
+
+                body {
+                    font-size: 16px;
+                }
+
+                .intro-container2 {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+
+                .social-icons {
+                    display: flex;
+                }
+            }
+        </style>
+    </head>
 
 <body>
     <header>
-        <a href="https://wa.me/+5511949674045" class="whatsapp-button" id="whatsappButton" target="_blank">
+        <a href="https://wa.me/+5511949674045" class="whatsapp-button" id="whatsappButton" target="_blank"
+            aria-label="Chat no WhatsApp">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            Fale Comigo
         </a>
 
-        <a class="h2a" href="index.html">Gabriel Spaggiari</a>
-        <input type="checkbox" id="menu-checkbox" hidden>
-        <label for="menu-checkbox" class="menu-toggle">
+        <a class="logo" href="index.html" aria-label="Página Inicial">
+            <img src="logogabspa.png" alt="Logo Spaggiari">
+        </a>
+
+        <input type="checkbox" id="menu-checkbox" hidden aria-label="Menu de Navegação">
+        <label for="menu-checkbox" class="menu-toggle" aria-label="Abrir Menu">
             <div></div>
             <div></div>
             <div></div>
         </label>
-        <nav class="menu">
+
+        <nav class="menu" aria-label="Menu Principal">
             <a href="index.html">Sobre</a>
             <a href="#minha-trajetoria">Minha Trajetória</a>
             <a href="#competencias-habilidades">Competências e Habilidades</a>
             <a href="#motivacao">Motivação</a>
             <a href="#trabalhos">Trabalhos</a>
         </nav>
+
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/gabriel-spaggiari-a7b52521b/" target="_blank" aria-label="LinkedIn">
+                <img src="linkedinlogo.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/seu-usuario" target="_blank" aria-label="GitHub">
+                <img src="githublogo.png" alt="GitHub">
+            </a>
+            <a href="https://www.instagram.com/seu-usuario" target="_blank" aria-label="Instagram">
+                <img src="instalogo.png" alt="Instagram">
+            </a>
+        </div>
     </header>
 
     <div class="intro-container">
@@ -324,6 +547,37 @@
         </div>
     </div>
 
+    <div class="intro-container5">
+        <div class="scrolling-images" id="scrollingImages">
+            <img src="htmllogo.png" alt="Imagem 1">
+            <img src="pslogo.png" alt="Imagem 2">
+            <img src="csslogo.png" alt="Imagem 3">
+            <img src="ailogo.png" alt="Imagem 4">
+            <img src="sqllogo.png" alt="Imagem 13">
+            <img src="figmalogo.png" alt="Imagem 5">
+            <img src="PHPlogo.png" alt="Imagem 6">
+            <img src="idlogo.png" alt="Imagem 7">
+            <img src="jslogo.png" alt="Imagem 8">
+            <img src="canvalogo.png" alt="Imagem 9">
+            <img src="reactlogo.png" alt="Imagem 11">
+            <img src="pythonlogo.png" alt="Imagem 10">
+            <img src="angularlogo.png" alt="Imagem 12">
+            <img src="gitlogo.png" alt="Imagem 14">
+            <img src="htmllogo.png" alt="Imagem 1">
+            <img src="pslogo.png" alt="Imagem 2">
+            <img src="csslogo.png" alt="Imagem 3">
+            <img src="ailogo.png" alt="Imagem 4">
+            <img src="figmalogo.png" alt="Imagem 5">
+            <img src="PHPlogo.png" alt="Imagem 6">
+            <img src="idlogo.png" alt="Imagem 7">
+            <img src="jslogo.png" alt="Imagem 8">
+            <img src="canvalogo.png" alt="Imagem 9">
+            <img src="pythonlogo.png" alt="Imagem 10">
+            <img src="angularlogo.png" alt="Imagem 12">
+            <img src="gitlogo.png" alt="Imagem 14">
+        </div>
+    </div>
+
     <div class="intro-container3">
         <div class="intro-text">
             <h3>Curiosidades, Competências e Habilidades:</h3>
@@ -338,7 +592,7 @@
         </div>
     </div>
 
-    <div class="intro-container3">
+    <div class="intro-container2">
         <div class="intro-text">
             <h3>Motivação:</h3>
             <p>Estou em um momento de transição de carreira, migrando do Design para a área de tecnologia. Acredito que
@@ -349,28 +603,9 @@
         </div>
     </div>
 
-    <div id="trabalhos"></div>
-    <div class="intro-container4">
-        <div class="intro-text">
-            <h3>Trabalhos:</h3>
-            <div class="buttons">
-                <a href="https://github.com/spaggiariGabe" class="button" target="_blank">Programação</a>
-                <a href="https://www.behance.net/spaggiariart" class="button" target="_blank">Design</a>
-            </div>
-        </div>
-        <div class="banner-container">
-            <div class="banner">
-                <img src="nalatavalk.png" alt="Imagem 1">
-                <img src="viper_BE.png" alt="Imagem 2">
-                <img src="psi_BE.png" alt="Imagem 3">
-                <img src="game1_be.png" alt="Imagem 4">
-            </div>
-            <div class="indicators">
-                <span class="indicator active" onclick="moveSlide(0)"></span>
-                <span class="indicator" onclick="moveSlide(1)"></span>
-                <span class="indicator" onclick="moveSlide(2)"></span>
-                <span class="indicator" onclick="moveSlide(3)"></span>
-            </div>
+    <div class="works-banner" id="trabalhos">
+        <div class="works-grid">
+            <!-- As primeiras 3 imagens serão inseridas aqui via JavaScript -->
         </div>
     </div>
 
@@ -380,7 +615,7 @@
             <a href="https://www.linkedin.com/in/gabriel-spaggiari-a7b52521b/" target="_blank">LinkedIn</a>
             <a href="mailto:gabspaggiari@gmail.com">Email</a>
         </div>
-        <p class="copyright">&copy; 2025 Gabriel Spaggiari. Todos os direitos reservados.</p>
+        <p class="copyright">&copy; 2025 Gabriel Spaggiari.</p>
     </footer>
 
     <script>
@@ -388,42 +623,19 @@
             const menu = document.querySelector(".menu");
             const menuCheckbox = document.getElementById("menu-checkbox");
             const menuLinks = document.querySelectorAll(".menu a");
-            
+
             document.addEventListener("click", function (event) {
                 if (!menu.contains(event.target) && event.target !== menuCheckbox) {
                     menuCheckbox.checked = false;
                 }
             });
-            
+
             menuLinks.forEach(link => {
                 link.addEventListener("click", function () {
                     menuCheckbox.checked = false;
                 });
             });
         });
-
-        let currentIndex = 0;
-        const slides = document.querySelectorAll(".banner img");
-        const indicators = document.querySelectorAll(".indicator");
-        const totalSlides = slides.length;
-
-        function updateSlide(index) {
-            document.querySelector(".banner").style.transform = `translateX(-${index * 100}%)`;
-            indicators.forEach(ind => ind.classList.remove("active"));
-            indicators[index].classList.add("active");
-        }
-
-        function moveSlide(index) {
-            currentIndex = index;
-            updateSlide(currentIndex);
-        }
-
-        function autoSlide() {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateSlide(currentIndex);
-        }
-
-        setInterval(autoSlide, 3000);
 
         window.addEventListener("scroll", function () {
             let whatsappButton = document.getElementById("whatsappButton");
@@ -435,8 +647,114 @@
                 whatsappButton.classList.remove("hidden");
             }
         });
+
+        const scrollingImages = document.getElementById("scrollingImages");
+        let isDragging = false;
+        let startX, scrollLeft;
+
+        scrollingImages.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            startX = e.pageX - scrollingImages.offsetLeft;
+            scrollLeft = scrollingImages.scrollLeft;
+            scrollingImages.style.cursor = "grabbing";
+        });
+
+        scrollingImages.addEventListener("mouseleave", () => {
+            isDragging = false;
+            scrollingImages.style.cursor = "grab";
+        });
+
+        scrollingImages.addEventListener("mouseup", () => {
+            isDragging = false;
+            scrollingImages.style.cursor = "grab";
+        });
+
+        scrollingImages.addEventListener("mousemove", (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - scrollingImages.offsetLeft;
+            const walk = (x - startX) * 2;
+            scrollingImages.scrollLeft = scrollLeft - walk;
+        });
+
+        scrollingImages.addEventListener("mousedown", () => {
+            scrollingImages.style.animationPlayState = "paused";
+        });
+
+        scrollingImages.addEventListener("mouseup", () => {
+            scrollingImages.style.animationPlayState = "running";
+        });
+
+        document.querySelectorAll('.menu a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        // Lista de imagens personalizadas
+        const imageList = Array.from({ length: 18 }, (_, i) => `trabalhos/trabalho${i + 1}.png`);
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Configurações
+        const totalImages = 18;
+        let loadedImages = 0;
+        const shuffledImages = shuffleArray([...imageList]);
+        const worksGrid = document.querySelector('.works-grid');
+
+        function loadMoreWorks() {
+            if (loadedImages >= totalImages) return;
+
+            const remaining = totalImages - loadedImages;
+            const toLoad = Math.min(3, remaining);
+
+            for (let i = 0; i < toLoad; i++) {
+                const workItem = document.createElement('figure');
+                workItem.className = 'work-item';
+                workItem.innerHTML = `
+                <a href="${shuffledImages[loadedImages]}" target="_blank" rel="noopener noreferrer">
+                    <img src="${shuffledImages[loadedImages]}" alt="Meu Trabalho ${loadedImages + 1}">
+                </a>
+            `;
+                worksGrid.appendChild(workItem);
+                loadedImages++;
+            }
+
+            if (loadedImages >= totalImages) {
+                const message = document.createElement('div');
+                message.className = 'load-message';
+                message.textContent = '';
+                worksGrid.parentElement.appendChild(message);
+                window.removeEventListener('scroll', scrollHandler);
+            }
+        }
+
+        function scrollHandler() {
+            const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+            if (scrollTop + clientHeight >= scrollHeight - 500 && loadedImages < totalImages) {
+                loadMoreWorks();
+            }
+        }
+
+        // Inicialização
+        window.addEventListener('scroll', scrollHandler);
+        loadMoreWorks(); // Carrega 3
+        loadMoreWorks(); // +3 = 6
+        loadMoreWorks(); // +3 = 9 (3 linhas iniciais)
     </script>
-
 </body>
-
 </html>
