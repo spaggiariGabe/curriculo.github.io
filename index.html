@@ -605,7 +605,6 @@
 
     <div class="works-banner" id="trabalhos">
         <div class="works-grid">
-            <!-- As primeiras 3 imagens serão inseridas aqui via JavaScript -->
         </div>
     </div>
 
@@ -699,7 +698,6 @@
                 }
             });
         });
-        // Lista de imagens personalizadas
         const imageList = Array.from({ length: 18 }, (_, i) => `trabalhos/trabalho${i + 1}.png`);
 
         function shuffleArray(array) {
@@ -710,7 +708,6 @@
             return array;
         }
 
-        // Configurações
         const totalImages = 18;
         let loadedImages = 0;
         const shuffledImages = shuffleArray([...imageList]);
@@ -750,11 +747,10 @@
             }
         }
 
-        // Inicialização
         window.addEventListener('scroll', scrollHandler);
-        loadMoreWorks(); // Carrega 3
-        loadMoreWorks(); // +3 = 6
-        loadMoreWorks(); // +3 = 9 (3 linhas iniciais)
+        loadMoreWorks();
+        loadMoreWorks();
+        loadMoreWorks();
     </script>
 </body>
 </html>
